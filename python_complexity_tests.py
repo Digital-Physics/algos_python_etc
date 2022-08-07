@@ -21,6 +21,8 @@ for key in complexity_dict:
 plt.axis([1, 10, 0, 100])
 plt.title("Big O Complexity comparison (small n; scaled Y axis)")
 plt.legend()
+plt.savefig("BigO.png")
 plt.show()
+
 
 
