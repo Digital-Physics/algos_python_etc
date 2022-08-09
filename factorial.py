@@ -6,7 +6,7 @@
 # f(7) = 7*f(6) so it needs f(6) before it can return an answer
 #
 # f(6) = 6*f(5)
-# f(7) = 7*f(6)
+# f(7) = times(7, f(6))
 #
 # f(5)
 # f(6)

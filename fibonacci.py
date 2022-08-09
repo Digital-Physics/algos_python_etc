@@ -1,5 +1,5 @@
 import time
-
+import inspect
 
 # decorator takes any function
 def calculate_time(func):
@@ -12,7 +12,7 @@ def calculate_time(func):
     return inner
 
 # naive fibonacci
-# time: O(2**n) (well it's not a balanced tree, but you do double the calls each time, so approximate?)
+# time: O(2**n) (two calls/recursive call. well it's not a balanced tree, but you do double the calls each time, so approximate?)
 # space: O(n) (n is the depth of the call stack)
 # call stack (tree viz):
 #                   f(4)
@@ -21,29 +21,46 @@ def calculate_time(func):
 # f(1)  f(0)
 #
 # stack builds up to the depth of the recursive tree
-# f(1)
-# f(2)
-# f(3) first needs f(2)
-# f(4) = needs f(3) and then f(2)
-#
-# before it goes down to
-# f(2)
-# f(3) first needs f(2)
-# f(4) = needs f(3) and then f(2)
-#
-# and then back up to
-#
-# f(0)
-# f(2) already has f(1) but still needs f(0)
-# f(3) first needs f(2) then f(1)
-# f(4) = needs f(3) and then f(2)
-#
-# f(2) has both f(1) and f(0) now so it will be popped off the stack when it returns the value next step
-# f(3)
+# I think 2 frames are put on the stack when the function is called/returned twice in one line
 # f(4)
 #
-# ...
+# f(3)
+# f(2)
+# f(4)
 #
+# f(2)
+# f(1)
+# f(2)
+# f(4)
+#
+# f(1)
+# f(0)
+# f(1)
+# f(2)
+# f(4)
+#
+# f(0)
+# f(1)
+# f(2)
+# f(4)
+#
+# f(1)
+# f(2)
+# f(4)
+#
+# f(2)
+# f(4)
+#
+# f(1)
+# f(0)
+# f(4)
+#
+# f(0)
+# f(4)
+#
+# f(4)
+#
+# (stack empty)
 
 
 @calculate_time
@@ -65,7 +82,7 @@ def recursive_wrapper_fib_2(n):
     return fib_2(n)
 
 
-# tail recursion (each time we are returning one thing)
+# tail recursion (the recursive call is what is returned, and we are only returning one value)
 def fib_2(n, i=2, last_two=(0, 1)):
     if n == 0:
         return 0
@@ -109,10 +126,13 @@ def fib_4(n, memo={0: 0, 1: 1}):
         return fib_4(n, memo)
 
 
-recursive_wrapper_fib_1(37)
-recursive_wrapper_fib_2(37)
-recursive_wrapper_fib_3(37)
-recursive_wrapper_fib_4(37)
+recursive_wrapper_fib_1(5)
+# recursive_wrapper_fib_2(37)
+# recursive_wrapper_fib_3(37)
+# recursive_wrapper_fib_4(37)
 
 
-
+# inspect frames on the call stack
+print(inspect.stack())
+# https://sites.cs.ucsb.edu/~pconrad/cs8/topics.beta/theStack/02/
+# https://code-maven.com/slides/python/stack-trace-using-inspect
