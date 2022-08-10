@@ -2,6 +2,8 @@ print("heaps are one instance of a 'priority queue'")
 print("heaps are good for getting the min or max of a list")
 print("that process of getting a min or max can be done in log time, not linear time like with a normal list")
 print("A heap is a tree but it's organized in a list, not using tree/node class objects with children")
+print("A heap is quicker to set up (O(n)) than making a BST (O(n*log(n)))")
+print("You can actually use a heap to create a sorted list in (O(n*log(n)))")
 
 
 class MinHeap:
@@ -77,7 +79,7 @@ class MinHeap:
 h = MinHeap([1, 8, -2, 8, 9, 3, 4])
 print(h.heap)
 
-print("the property the heap has is that each parent is less than or equal to its children")
+print("heap property: each parent is less than (in the case of MinHeap) (or equal to) its children")
 #      -2
 #   8       1
 # 8   9   3   4
