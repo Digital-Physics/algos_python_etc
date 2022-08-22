@@ -2,6 +2,7 @@ from __future__ import annotations
 
 
 def generate_power_set(s: set[int | float]) -> set[int | float]:
+    """generate a set of all subsets"""
     empty_set = frozenset()
     power_set = set()
     power_set.add(empty_set)
