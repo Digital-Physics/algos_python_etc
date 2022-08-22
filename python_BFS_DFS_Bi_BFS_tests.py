@@ -55,5 +55,6 @@ bfs()
 print("Depth First Search")
 dfs()
 
+print("For bidirectional BFS, see grid_with_portals.py")
 
 
