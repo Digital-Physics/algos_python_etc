@@ -12,6 +12,8 @@ def generate_power_set(s: set[int | float]) -> set[int | float]:
         for subset in power_set:
             new_subset = subset.union({num})
             half_of_next.add(new_subset)
+
+        # power_set without new element union with new element
         power_set = power_set.union(half_of_next)
 
     return power_set
