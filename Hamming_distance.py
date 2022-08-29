@@ -1,6 +1,7 @@
 def Hamming_distance(x: int, y: int) -> int:
-    """calculate the Hamming distance = bit-wise difference between two binary numbers"""
-    diff = bin(x ^ y)[2:]
+    """calculate the Hamming distance between two integers.
+    calc the number of bit differences when ints are converted to binary"""
+    diff = bin(x ^ y)[2:]  # XOR ^ works on Ints
     print(diff)
     total = 0
 

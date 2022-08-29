@@ -116,6 +116,11 @@ print("-".join(list_s))
 print(",".join(list_s))
 print("abz".join(list_s))
 
+print(bin(32))
+print(type(bin(32)))
+print(bin(32)[2:])
+print(bin(8)[2:].zfill(6))
+
 
 
 
