@@ -121,6 +121,18 @@ print(type(bin(32)))
 print(bin(32)[2:])
 print(bin(8)[2:].zfill(6))
 
+test_str = ""
+test_str2 = "a"
+
+if test_str2:
+    print(test_str2)
+else:
+    print("did something go wrong?")
+
+if test_str:
+    print(test_str)
+else:
+    print("no string")
 
 
 

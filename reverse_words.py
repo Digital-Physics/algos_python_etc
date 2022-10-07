@@ -6,3 +6,4 @@ def reverse_words(s: str) -> str:
 
 
 print(reverse_words("Digital Physics is coooooolll!"))
+
