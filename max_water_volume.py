@@ -1,8 +1,9 @@
-from __future__ import annotations
-
+# from __future__ import annotations
+#
 
 def max_water_area(wall_heights: list[int]) -> int:
-    """Returns the max area of a pool where the height is the min of two sides."""
+    """Returns the max area of a pool where the height is the min of two sides,
+    and the width is the distance between them (in terms of their indices)."""
     l_idx = 0
     r_idx = len(wall_heights) - 1
     max_area = 0
